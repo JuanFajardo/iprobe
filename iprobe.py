@@ -51,8 +51,8 @@ if __name__ == '__main__':
         
     for t in range(num_threads):
         thread = threading.Thread(target=fetch_target, args=(q,))
-        thread.setDaemon(True)
-        
+        #thread.setDaemon(True)
+        thread.daemon= True
         thread.start()
     
     for ip in sys.stdin:
